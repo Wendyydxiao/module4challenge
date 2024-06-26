@@ -1,31 +1,72 @@
-/*
-  Form Styles
-*/
 
-/*
-  Tags
-*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-light);
+  color: var(--text-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  height: 60px;;
+  background-color: var(--light);
+  color:var(--light);
+}
+
+.toggle-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: var(--circle-color);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+
+}
+
+main {
+  flex: 1;
+  width:100%;
+}
+
 aside {
-    background: linear-gradient(
-      var(--light-accent), 
-      var(--circle-color), 
-      var(--dark-accent)
+  background: linear-gradient(
+     var(--light-accent), 
+     var(--circle-color), 
+     var(--dark-accent)
     );
-    clip-path: circle(20rem at center);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  aside, 
-  section {
-    flex: 1 1 50%;
+  clip-path: circle(20rem at center);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width:50%;
   }
   
   aside > h2 {
     font-size: 4rem;
     color: white;
     text-shadow: 1px 1px 1px var(--dark-accent);
+  }
+
+  section {
+    flex: 1;
+    width:50%;
+    flex-direction: column;
+    padding: 2rem;
+    display: flex;
+    align-items: stretch;
+    flex-flow: column wrap;
+    justify-content: center;
+    border-left: double 1rem;
   }
   
   form {
@@ -45,7 +86,7 @@ aside {
     margin-bottom: 2rem;
   }
   
-  input[type=submit] {
+  button {
     padding: 1rem;
     cursor: pointer;
     font-weight: bold;
@@ -54,12 +95,12 @@ aside {
     color: var(--light);
   }
   
-  input[type=submit]:active {
+  button:active {
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .5);
     background-color: var(--dark-accent);
   }
   
-  input[type=submit]:hover {
+  button:hover {
     border-style: inset;
     background-color: var(--dark-accent-action);
   }
@@ -72,18 +113,10 @@ aside {
     background-color: var(--light-accent);
   }
   
-  section {
-    padding: 2rem;
-    display: flex;
-    align-items: stretch;
-    flex-flow: column wrap;
-    justify-content: center;
-    border-left: double 1rem;
-  }
-  
   /*
     Classes
   */
+
   .dark section {
     border-left: solid .5rem var(--disabled);
   }
@@ -98,3 +131,13 @@ aside {
     bottom: -2rem;
   }
   
+  @media screen and (max-width:1420px) {
+    aside {
+      display: none;
+      width: 30%;
+    }
+    section {
+      width: 100%;
+      border-left: none;
+    }
+  }
