@@ -5,11 +5,10 @@
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px;
+  padding:20px;
   background-color: #f5f5f5;
 }
 .posts {
@@ -117,13 +116,14 @@ a {
   /*
     IDs
   */
-  #back {
+  .back {
     padding: 0.5rem 1rem;
     border-radius: 4px;
     margin-right: 1rem;
     border: groove black;
     background-color: var(--dark-accent);
     color: var(--light);
+    justify-content: flex-end;
   }
   
   
@@ -137,6 +137,35 @@ a {
     background-color: var(--dark-accent-action);
   }
   
+  .toggle-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 200%;
+  }
+
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+.button-container a,
+.button-container button {
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button-container button {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
   #love {
     text-align: center;
   }

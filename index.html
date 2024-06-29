@@ -11,10 +11,13 @@
 
 
   </head>
-<body>
-  <!-- TODO: Create landing page elements -->
+
+  <body>
+
   <header>
-    <button class="toggle-button" onclick="toggleMode()">Toggle Mode</button>
+    <div class="button-container">
+      <div class="toggle-mode" onclick="toggleMode()">🌞</div>
+  </div>
   </header>
   
   <main class="container light">
@@ -24,15 +27,22 @@
     <section>
         <h2>What's on your mind?</h2>
 
-      <form id="form">
+      <form id="blogForm">
         <input type="text" id="username" placeholder="Username">
         <input type="text" id="title" placeholder="Blog Title">
         <textarea id="content" placeholder="Blog Content"></textarea>
-        <button onclick="submitPost()">Submit</button>
+        <button onclick="handleFormSubmission()">Submit</button>
       </form>
+      <div id="error-message" class="error"></div>
     </section>
 
   </main>
+
+  <footer>
+
+    <p> &copy; 2024 Wendy Xiao </p>
+
+  </footer>
 
   <script defer src="/assets/js/logic.js" type="text/javascript"></script>
   <script defer src="/assets/js/form.js" type="text/javascript"></script>
