@@ -30,7 +30,7 @@ aside {
      var(--circle-color), 
      var(--dark-accent)
     );
-  clip-path: circle(20rem at center);
+  clip-path: circle(16rem at center);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,9 +118,24 @@ textarea {
   
 @media screen and (max-width:1420px) {
   aside {
-    display: none;
+    clip-path: circle(12rem at center);
     width: 30%;
   }
+  aside > h2 {
+    font-size: 2rem;
+  }
+
+  section {
+    width: 100%;
+    border-left: none;
+  }
+}
+
+@media screen and (max-width:860px) {
+  aside {
+    display:none;
+  }
+
   section {
     width: 100%;
     border-left: none;

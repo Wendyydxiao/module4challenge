@@ -1,172 +1,102 @@
-/*
-  Blog Styles
-*/
 
 body {
-  display: flex;
   justify-content: center;
   flex-direction: column;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding:20px;
   background-color: #f5f5f5;
 }
-.posts {
-  width: 100%;
-  max-width: 600px;
-}
-.post {
+
+.post-card {
   background-color: white;
-  padding: 15px;
-  margin-bottom: 10px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
   border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-.post h3 {
+
+#main-content h3 {
   margin: 0;
   font-size: 1.2em;
   color: #333;
+  margin-bottom: 25px;
+  border-bottom: double 1px black;
 }
-.post p {
+
+#main-content p {
   margin: 5px 0 0;
   color: #555;
+  margin-bottom: 20px;
+  font-style: italic;
+
 }
-.post .username {
+
+#main-content span {
   font-size: 0.9em;
   color: #999;
 }
 
-/*
-  Tags
-*/
-a {
-    text-decoration: none;
-  }
-  
-  article {
-    flex: 1 1 50%;
-    border: 2px solid;
-    border-radius: 4px;
-    padding: 1rem;
-    position: relative;
-  }
-  
-  article blockquote {
-    margin: 1rem;
-    margin-bottom: 2rem;
-    font-style: italic;
-  }
-  
-  article h2 {
-    text-transform: capitalize;
-    border-bottom: thin solid;
-  }
-  
-  article p {
-    position: absolute;
-    left: 1rem;
-    bottom: 0.5rem;
-    opacity: .75;
-  }
-  
-  footer {
-    position: fixed;
-    inset: 0;
-    top: calc(100% - 5rem);
-  }
-  
-  li {
-    margin: 1rem;
-  }
-  
-  main {
-    flex-direction: column;
-    gap: 1em;
-    padding: 1rem;
-    height: calc(100vh - 11rem);
-    overflow-y: scroll;
-    justify-content: flex-start;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  /*
-    Classes
-  */
-  .card {
-    flex: 1 1 50%;
-    border: 2px solid;
-    border-radius: 4px;
-  }
-  
-  .dark a {
-    color: var(--light);
-  }
-  
-  .light footer {
-    border-top: double 1rem;
-  }
-  
-  .light a {
-    color: var(--dark);
-  }
-  
-  /*
-    IDs
-  */
-  .back {
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    margin-right: 1rem;
-    border: groove black;
-    background-color: var(--dark-accent);
-    color: var(--light);
-    justify-content: flex-end;
-  }
-  
-  
-  #back:active {
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .5);
-    background-color: var(--dark-accent);
-  }
-  
-  #back:hover {
-    border-style: inset;
-    background-color: var(--dark-accent-action);
-  }
-  
-  .toggle-button {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 200%;
-  }
+main {
+  flex-direction: column;
+  gap: 1em;
+  padding: 1rem;
+  height: calc(100vh - 11rem);
+  overflow-y: scroll;
+  justify-content: flex-start;
+}
 
+footer {
+  inset: 0;
+  top: calc(100% - 5rem);
+}
+
+.back {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  border-color: white;
+  background-color: var(--dark-accent);
+  color: var(--light);
+  display: inline-block;
+}  
+
+.back:active {
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .5);
+  background-color: var(--dark-accent);
+}
+  
+.back:hover {
+  border-style: inset;
+  background-color: var(--dark-accent-action);
+}
+  
+.toggle-mode {
+  right: 10px;
+  font-size: 200%;
+}
 
 .button-container {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
 }
+  
 .button-container a,
-.button-container button {
-    padding: 5px 10px;
-    background-color: black;
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.button-container .toggle-mode {
+  padding: 5px 10px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
-.button-container button {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
+
+#love {
+  text-align: center;
+  margin-bottom: 15px;
 }
-  #love {
-    text-align: center;
-  }
   

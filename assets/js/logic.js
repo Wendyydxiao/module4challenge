@@ -5,4 +5,3 @@ function toggleMode() {
     const toggleButton = document.querySelector('.toggle-mode');
     toggleButton.textContent = document.body.classList.contains('dark') ? '🌙' : '🌞';
 }
-// TODO: Create functions to read and write from local storage

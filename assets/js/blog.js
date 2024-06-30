@@ -1,37 +1,37 @@
 // Create a variable that selects the main element
-const mainElement = document.querySelector('main');
+document.addEventListener('DOMContentLoaded', function() {
+   const mainContent = document.getElementById('main-content');
 
 // Create a function that builds an element and appends it to the DOM
 
 function createPostElement(post) {
     const postElement = document.createElement('div');
-    postElement.className = 'post';
+    postElement.classList.add('post-card');
 
-    const titleElement = document.createElement('h3');
-    titleElement.textContent = post.title;
+    const postTitle = document.createElement('h3');
+    postTitle.textContent = post.title;
+    postElement.appendChild(postTitle);
 
-    const contentElement = document.createElement('p');
-    contentElement.textContent = post.content;
+    const postContent = document.createElement('p');
+    postContent.textContent = post.content;
+    postElement.appendChild(postContent);
 
-    const authorElement = document.createElement('p');
-    authorElement.textContent = `Posted by: ${post.username}`;
+    const postAuthor = document.createElement('span');
+    postAuthor.textContent = `Posted by: ${post.username}`;
+    postElement.appendChild(postAuthor);
 
-    const dateElement = document.createElement('p');
-    dateElement.className = 'timestamp';
-    dateElement.textContent = new Date(post.timestamp).toLocaleString();
+    const postTimestamp = document.createElement('span');
+    postTimestamp.classList.add('timestamp');
+    postTimestamp.textContent = post.timestamp;
+    postElement.appendChild(postTimestamp);
 
-    postElement.appendChild(titleElement);
-    postElement.appendChild(authorElement);
-    postElement.appendChild(contentElement);
-    postElement.appendChild(dateElement);
-
-    mainElement.appendChild(postElement);
+    return postElement;
 }
 // Create a function that handles the case where there are no blog posts to display
-function displayNoPostsMessage() {
-    const messageElement = document.createElement('p');
-    messageElement.textContent = 'No blog posts available. Please create a new post.';
-    mainElement.appendChild(messageElement);
+function handleNoPosts() {
+    const noPostsMessage = document.createElement('p');
+    noPostsMessage.textContent = 'No posts available, please hit BACK button to create a new post.';
+    mainContent.appendChild(noPostsMessage);
 }
 // Create a function that reads from local storage and returns the data
 function getPostsFromLocalStorage() {
@@ -40,43 +40,18 @@ function getPostsFromLocalStorage() {
 // Call the function to render the list of blog posts
 function renderPosts() {
     const posts = getPostsFromLocalStorage();
+
     if (posts.length === 0) {
-        displayNoPostsMessage();
-    } else {
-        posts.forEach(createPostElement);
+        handleNoPosts();
+        return;
     }
+
+    posts.forEach(post => {
+        const postElement = createPostElement(post);
+        mainContent.appendChild(postElement);
+    });
 }
 
 renderPosts();
 
-// function loadPosts() {
-//     let posts = JSON.parse(localStorage.getItem('posts')) || [];
-
-//     // Debugging logs
-//     console.log('Loaded posts:', posts);
-
-//     const postsContainer = document.getElementById('posts');
-//     postsContainer.innerHTML = '';
-
-//     posts.forEach(post => {
-//         const postContainer = document.createElement('div');
-//         postContainer.className = 'post';
-
-//         const postTitle = document.createElement('h3');
-//         postTitle.innerText = post.title;
-//         postContainer.appendChild(postTitle);
-
-//         const postContent = document.createElement('p');
-//         postContent.innerText = post.content;
-//         postContainer.appendChild(postContent);
-
-//         const postUsername = document.createElement('p');
-//         postUsername.className = 'username';
-//         postUsername.innerText = `Posted by: ${post.username} on ${new Date(post.timestamp).toLocaleString()}`;
-//         postContainer.appendChild(postUsername);
-
-//         postsContainer.appendChild(postContainer);
-//     });
-// }
-
-// window.onload = loadPosts;
+});
