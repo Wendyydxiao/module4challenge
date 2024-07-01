@@ -68,9 +68,7 @@ ul {
   transition: background-color ease-in .5s;
 }
 
-/*
-  Tags
-*/
+
 header {
   display: flex;
   flex-flow: row wrap;
@@ -108,9 +106,7 @@ main {
   border-bottom: double 1rem;
 }
 
-/*
-  Classes
-*/
+
 .dark header,
 .dark footer {
   background-color: var(--dark);
@@ -141,9 +137,7 @@ main {
   color: var(--dark);
 }
 
-/*
-  IDs
-*/
+
 .toggle-mode {
   font-size: 1.52em;
   margin: 0;
