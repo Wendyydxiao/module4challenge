@@ -1,7 +1,7 @@
 # 04 Web APIs: Personal Blog
 - The goal of the project is to build Personal Blog pages. It should enable user o create a blog and view it on blog details page. This is the 4th module challenge for the bootcamp student to demonstrate JavaScript knowledge.
 - This page contains HTML, CSS & JS codes
-- Live page: 
+- Live page: https://wendyydxiao.github.io/module4challenge/
 - Screenshot(s): 
 <img src="/assets/images/form page.png" width="350" title="form screenshot">
 <img src="/assets/images/blog page.png" width="350" title="blog screenshot">
@@ -49,7 +49,7 @@ SO THAT I can showcase my thoughts and experiences.
 
 
 ## Project Status
-Project is compelted
+Project is completed
 
 
 ## Contact
